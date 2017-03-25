@@ -4,6 +4,9 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AddPlanetaPage } from '../pages/add-planeta/add-planeta';
 
+import { DatabaseConnection } from '../providers/database/database-connection';
+import { PlanetaDao } from '../providers/database/planeta-dao';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -19,6 +22,8 @@ import { AddPlanetaPage } from '../pages/add-planeta/add-planeta';
     HomePage,
     AddPlanetaPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }
+    , DatabaseConnection
+    , PlanetaDao]
 })
-export class AppModule {}
+export class AppModule { }
